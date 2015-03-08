@@ -7,13 +7,15 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Display;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import java.util.Random;
 
-public class HitActivity extends Activity {
+public class HitAnimationActivity extends ActionBarActivity {
     private ObjectAnimator animation1;
     private ObjectAnimator animation2;
     private ObjectAnimator animation3;
@@ -28,6 +30,7 @@ public class HitActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.target);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Point size = new Point();
         Display display = getWindowManager().getDefaultDisplay();
         display.getSize(size);
@@ -84,5 +87,16 @@ public class HitActivity extends Activity {
 
         set.playTogether(animation1, animation2, animation3);
         return set;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
