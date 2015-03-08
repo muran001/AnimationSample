@@ -11,19 +11,28 @@
         android:layout_height="wrap_content"
         android:text="Basic Animation"
         android:id="@+id/button"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="120dp"
+        android:onClick="startBasicAnimationActivity"
+        android:layout_above="@+id/button2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="startBasicAnimationActivity" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hit Animation"
         android:id="@+id/button2"
-        android:layout_below="@+id/button"
+        android:onClick="startHitAnimationActivity"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="startHitAnimationActivity" />
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/topImage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:baselineAlignBottom="false"
+        android:adjustViewBounds="false" />
 </RelativeLayout>
